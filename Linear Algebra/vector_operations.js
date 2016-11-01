@@ -9,43 +9,21 @@ const rl = readline.createInterface({
 rl.setPrompt(prefix, prefix.length);
 rl.prompt();
 
-class vector {
-	constructor(name,x,y,z){
-		this.name = name;
-		this.x = x;
-		this.y = y;
-		this.z = z;
-	}
-	add(u,v){
-		return [u.x+v.x, u.y+v.y, u.z+v.z];
-	}
-	subtract(u,v){
-		return [u.x-v.x, u.y-v.y, u.z-v.z];
-	}
-	scalarProduct(c,u){
-		return [c*u.x,c*u.y,c*u.z];
-	}
-	show(u){
-		console.log("Vector "+u.name);
-		console.log("x :"+u.x);
-		console.log("y :"+u.y);
-		console.log("z :"+u.z);
-	}
-}
-
-
-
-
 var vector = (function() {
     var globalvar = 0;
 
     //Expose the methods that are needed for external access. Abstration!
     var publicAPI = {
-        create: function() {
-
+        add: function(u,v) {
+        	console.log([u.x+v.x, u.y+v.y, u.z+v.z]);
         },
-        setDefaults: function() {
-            
+        subtract: function(u,v) {
+        	console.log([u.x-v.x, u.y-v.y, u.z-v.z]);
+        },
+        scalarProduct: function(u,v) {
+        	console.log([c*u.x,c*u.y,c*u.z]);
+        },
+        setDefaults: function() { 
         }
     }
     return publicAPI;
