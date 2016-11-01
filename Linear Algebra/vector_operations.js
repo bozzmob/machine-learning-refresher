@@ -32,3 +32,25 @@ class vector {
 		console.log("z :"+u.z);
 	}
 }
+
+
+
+
+var vector = (function() {
+    var globalvar = 0;
+
+    //Expose the methods that are needed for external access. Abstration!
+    var publicAPI = {
+        create: function() {
+
+        },
+        setDefaults: function() {
+            
+        }
+    }
+    return publicAPI;
+
+	function privatefunction() {
+	}
+
+})();
