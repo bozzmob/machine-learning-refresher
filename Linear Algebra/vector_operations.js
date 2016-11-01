@@ -8,20 +8,22 @@ const rl = readline.createInterface({
 });
 rl.setPrompt(prefix, prefix.length);
 rl.prompt();
-
+console.log("working");
 var vector = (function() {
+	console.log("inside vector");
     var globalvar = 0;
 
     //Expose the methods that are needed for external access. Abstration!
     var publicAPI = {
         add: function(u,v) {
-        	console.log([u.x+v.x, u.y+v.y, u.z+v.z]);
+        	console.log("inside add");
+        	rl.output({"x":u.x+v.x, "y":u.y+v.y, "z":u.z+v.z});
         },
         subtract: function(u,v) {
-        	console.log([u.x-v.x, u.y-v.y, u.z-v.z]);
+        	console.log({"x":u.x-v.x, "y":u.y-v.y, "z":u.z-v.z});
         },
         scalarProduct: function(u,v) {
-        	console.log([c*u.x,c*u.y,c*u.z]);
+        	console.log({"x":c*u.x,"y":c*u.y,"z":c*u.z});
         },
         setDefaults: function() { 
         }
@@ -32,3 +34,10 @@ var vector = (function() {
 	}
 
 })();
+
+module.exports.add = function(u,v){
+        	console.log("inside add");
+        	rl.output({"x":u.x+v.x, "y":u.y+v.y, "z":u.z+v.z});
+}
+
+//STUCK TO DEATH!! Python course... Here we go... :(
