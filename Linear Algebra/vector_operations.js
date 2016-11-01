@@ -32,37 +32,3 @@ class vector {
 		console.log("z :"+u.z);
 	}
 }
-
-//http://codereview.stackexchange.com/questions/134048/how-to-flatten-multiple-nested-node-readline-questions
-(function run() {
-  var count=1;
-  var vector_u,vector_v,vector_w;
-  rl.on('line', (line) => {
-    line = line.trim();
-    var vectorElements = line.split(',');
-    if(parseInt(vectorElements[0]) == 1){
-	    console.log("Enter the vector in the following format - name,x,y,z");
-	    switch(count){
-	      case 1 :
-	          vector_u = new vector(vectorElements[1],vectorElements[2],vectorElements[3],vectorElements[4]);
-	          console.log("vector_u "+vector_u);
-	          break;
-	      case 2 :vector_v = new vector(vectorElements[1],vectorElements[2],vectorElements[3],vectorElements[4]);
-	          console.log("vector_v "+vector_v);
-	          break;
-	      case 3 :vector_w = new vector(vectorElements[1],vectorElements[2],vectorElements[3],vectorElements[4]);
-	          console.log("vector_w "+vector_w);
-	          break;
-	      default :console.log("You can have maximum of 3 vectors");
-	    }
-	}
-	if(parseInt(vectorElements[0]) == 2){
-		console.log("2222")
-	}
-    count++;
-    rl.prompt();
-  }).on('close', () => {
-    console.log('End');
-    process.exit(0);
-  });
-})();
