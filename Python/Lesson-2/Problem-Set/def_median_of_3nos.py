@@ -14,22 +14,16 @@ def biggest(a,b,c):
     return bigger(a,bigger(b,c))
 
 def median(a,b,c):
-    if bigger(a,b):
-        if bigger(a,c):
-            if bigger(b,c):
-                return b
-            else:
-                return c
-        else:
-            return a
+    big = biggest(a,b,c)
+    if big == a:
+        return bigger(b,c)
+    if big == b:
+        return bigger(a,c)
     else:
-        if bigger(b,c):
-            return c
-        else:
-            return b
+        return bigger(a,b)
 
 
-#print(median(1,2,3))
+print(median(1,2,3))
 #>>> 2
 
 #print(median(9,3,6))
